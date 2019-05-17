@@ -1,0 +1,53 @@
+.sidebar{
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  background-color: $color-primary;
+  @include respond(lg){
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  &__checkbox{
+    display: none;
+  }
+
+  &__label{
+    display: block;
+    margin: 2rem;
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    @include respond(lg){
+      position: absolute;
+      top: 1rem;
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &__hamburger{
+    position: relative;
+    //padding: 1rem;
+    &,
+    &::after,
+    &::before{
+      display: block;
+      height: 2px;
+      width: 3rem;
+      background-color: white;
+    }
+
+    &::after,
+    &::before{
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+    &::before{
+      top: -1rem;
+    }
+    &::after{
+      top: 1rem;
+    }
+  }
+}
